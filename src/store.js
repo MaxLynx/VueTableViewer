@@ -49,6 +49,7 @@ export default new Vuex.Store({
         axios(link)
         .then(response => {
           context.commit("load", response.data);    
+          context.commit("setStartIndex", 1);    
         })
         .catch(error => {
           console.log(error);

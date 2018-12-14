@@ -29,7 +29,7 @@ export default {
         let tableData = this.$store.state.data.slice(parseInt(this.$store.state.startIndex-1), 
         parseInt(this.$store.state.startIndex-1)+parseInt(this.$store.state.perPage));
         if(tableData == null)
-        return defRows;
+        return this.defRows;
         else
         return tableData;
       
