@@ -8,8 +8,8 @@
             <a @click="changePage(index)">{{index}}</a>
           </span> 
         </li>
-        <li><span v-bind:class="{ available: this.$store.state.startIndex + this.$store.state.perPage < this.$store.state.data.length }"
-        v-on="{ click: this.$store.state.startIndex + this.$store.state.perPage < this.$store.state.data.length ? changePageToNext : empty }">Next</span></li>
+        <li><span v-bind:class="{ available: parseInt(this.$store.state.startIndex) + parseInt(this.$store.state.perPage) < parseInt(this.$store.state.data.length) }"
+        v-on="{ click: parseInt(this.$store.state.startIndex) + parseInt(this.$store.state.perPage) < parseInt(this.$store.state.data.length) ? changePageToNext : empty }">Next</span></li>
       </ul>
   </nav>
 </template>
@@ -36,7 +36,6 @@ export default {
 			changePage(page) {
         this.currentPage = page;
         this.$store.commit('setStartIndex', (page-1) * this.$store.state.perPage + 1);
-
       },
       
       changePageToPrev() {

@@ -15,6 +15,7 @@ export default {
 
   watch: {
     searchText: function(val, oldVal) {
+      this.$store.state.startIndex = 1;
       this.$store.commit('find', val);
     }
   }

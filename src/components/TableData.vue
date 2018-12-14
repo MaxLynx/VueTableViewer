@@ -26,7 +26,8 @@ export default {
 
   computed: {
       rows: function(){
-        let tableData = this.$store.state.data.slice(this.$store.state.startIndex-1, this.$store.state.startIndex-1+this.$store.state.perPage);
+        let tableData = this.$store.state.data.slice(parseInt(this.$store.state.startIndex-1), 
+        parseInt(this.$store.state.startIndex-1)+parseInt(this.$store.state.perPage));
         if(tableData == null)
         return defRows;
         else
